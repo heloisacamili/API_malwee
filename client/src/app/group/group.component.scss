@@ -1,0 +1,46 @@
+.example-form { 
+  width: 100%; 
+} 
+.example-full-width { 
+  width: 100%; 
+}
+#editar {
+  display: block;
+}
+#grupos tr:nth-child(even){
+  background-color: #e7e7e7;
+}
+#grupos tr:hover {
+  background-color: rgb(74, 112, 216);
+  color: white;
+  overflow: hidden;
+}
+#grupos th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  color: white;
+  overflow: hidden;
+}
+#grupos {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  margin-top: 30px;
+  width: 80%;
+  border-spacing: 0px;
+  margin: 30px auto;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+#grupos td, #grupos th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+#id, #config {
+  background-color: #7246da;
+}
+#grupo {
+  background-color: #3ba771;
+}

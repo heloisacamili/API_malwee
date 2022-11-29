@@ -1,0 +1,22 @@
+<mat-accordion>
+    <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Adicionar novo subgrupo
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <app-dropdown [array]="groups" [idField]="'id'" [textField]="'description'" [title]="'Grupo'" [(ngModel)]="group"></app-dropdown> 
+        <br>
+        <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Inserir novo subgrupo</mat-label>
+            <input matInput placeholder="Descrição.." [(ngModel)]="nameProduct" name="nameProduct" style="width: 50%;" required>
+            <mat-error *ngIf="insert.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field><br>
+        <button style="text-align: center;" mat-raised-button matSuffix color="primary" (click)="add()">Confirmar</button>
+    </mat-expansion-panel>
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+    </mat-expansion-panel>
+</mat-accordion><br>
+
+<button mat-raised-button id="botao" (click)="cancel()">Fechar</button>

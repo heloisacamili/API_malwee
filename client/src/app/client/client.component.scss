@@ -1,0 +1,50 @@
+.example-form { 
+  width: 100%; 
+} 
+.example-full-width { 
+  width: 100%; 
+}
+#clientes tr:nth-child(even){
+  background-color: #f2f2f2;
+}
+#clientes tr:hover {
+  background-color: rgb(74, 112, 216);
+  color: white;
+}
+#clientes th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  color: white;
+}
+#clientes {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  margin-top: 30px;
+  width: 80%;
+  border-spacing: 0px;
+  margin: 30px auto;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+#clientes td, #clientes th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+#id, #cnpj, #cd, #create, #end {
+  background-color: #7246da;
+}
+#name, #rs, #config, #atualizado, #cd {
+  background-color: #3ba771;
+}
+#delete, #edit {
+  display: block;
+  float: right;
+  border-radius: 10px;
+}
+#delete:hover, #edit:hover {
+  color: rgb(74, 112, 216);
+  background-color: white;
+}

@@ -1,0 +1,32 @@
+<form class="example-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Buscar usuário</mat-label>
+        <input matInput placeholder="Digite aqui..." [(ngModel)]="pesquisar" name="pesquisar">
+        <button mat-icon-button matSuffix (click)="openDialog()"> 
+            <mat-icon>add_circle_outline</mat-icon>
+        </button>
+    </mat-form-field>
+</form>
+
+<div *ngFor="let user of users; let islast = last; let i = index">
+    <ng-template [ngIf]="islast">
+        <h1>Total de usuários cadastrados : {{i+1}}</h1>
+    </ng-template>
+</div>
+
+<table id="users">
+    <tr>
+        <th id="id"> ID </th>
+        <th id="name"> Nome </th>
+        <th id="user"> Usuário </th>
+    </tr>
+
+    <tr *ngFor="let user of users | filter:name" >
+        <td> {{user.id}} </td>
+        <td (click)="openDialog2(users, user.id, user.name, user.username, user.password, user.cpassword)"> {{user.name}} </td>
+        <td (click)="openDialog2(users, user.id, user.name, user.username, user.password, user.cpassword )"> {{user.username}} </td>
+    </tr> 
+</table>
+
+
+

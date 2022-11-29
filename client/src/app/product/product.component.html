@@ -1,0 +1,36 @@
+<form class="example-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Buscar produto</mat-label>
+        <input matInput placeholder="Digite aqui..." [(ngModel)]="pesquisar" name="pesquisar">
+        <button mat-icon-button matSuffix (click)="openDialog()"><mat-icon>add_circle_outline</mat-icon></button>
+    </mat-form-field>
+</form>
+
+<mat-card *ngFor="let product of products | filter : pesquisar;">
+    <mat-card-title>
+        {{product.description}} 
+    </mat-card-title>
+    <mat-card-subtitle>
+        R${{product.price}}
+    </mat-card-subtitle>
+    <mat-card-content>
+        <table id="produtos">
+            <tr>
+              <th id="id">ID</th>
+              <th id="produto">Produto</th>
+              <th id="preco">Preço</th>
+              <th id="colecao">Coleção</th>
+              <th id="grupo">Grupo</th>
+              <th id="subgrupo">Subgrupo</th>
+            </tr>
+            <tr>
+              <td (click)="openDialog3()">{{product.id}}</td>
+              <td (click)="openDialog2(products, id, description, price)">{{product.description}}</td>
+              <td (click)="openDialog2(products, id, description, price)">R${{product.price}}</td>
+              <td (click)="openDialog2(products, id, description, price)">{{product.collection_description}}</td>
+              <td (click)="openDialog2(products, id, description, price)">{{product.group_description}}</td>
+              <td (click)="openDialog2(products, id, description, price)">{{product.subgroup_nameProduct}}</td>
+            </tr>
+        </table>        
+    </mat-card-content>
+</mat-card>

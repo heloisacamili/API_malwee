@@ -1,0 +1,90 @@
+<mat-tab-group id="modal">
+
+  <mat-tab label="Adicionar">
+       <mat-form-field class="example-full-width" appearance="outline" >
+           <mat-label>Insira o nome</mat-label>
+          <input matInput placeholder="Ex. André Ricardo Rocha" [(ngModel)]="name" required>
+       </mat-form-field><br>
+       <mat-form-field class="example-full-width" appearance="outline" >
+          <mat-label>Insira o cnpj</mat-label>
+          <input matInput #input maxlength="14" placeholder="Ex. 22. 541. 956/0001-36" [(ngModel)]="cnpj" required>
+          <mat-hint align="end">{{input.value.length}}/14</mat-hint>
+       </mat-form-field><br>
+       <mat-form-field class="example-full-width" appearance="outline" >
+          <mat-label>Insira a Razão Social</mat-label>
+          <input matInput placeholder="Ex. Itaú Unibanco Banco Múltiplo S.A" [(ngModel)]="socialReason" required>
+       </mat-form-field>
+       
+       <br>
+      <button mat-raised-button color="primary" (click)="add()">Adicionar</button>
+  </mat-tab><br><br>
+
+  <mat-tab label="Endereços">
+     <!--<table id="dados">
+        <tr>
+           <th id="rua">Rua</th>
+           <th id="bairro">Bairro</th>
+           <th id="cidade">Cidade</th>
+           <th id="est">Estado</th>
+           <th id="cep">CEP</th>
+           <th id="num">Número</th>
+        </tr>
+
+        <tr *ngFor="let person of newAddress">
+           <th>{{person.rua}}</th>
+           <th>{{person.bairro}}</th>
+           <th>{{person.cidade}}</th>
+           <th>{{person.estado}}</th>
+           <th>{{person.cep}}</th>
+           <th>{{person.num}}</th>
+        </tr>
+     </table>
+
+     <h1 style="text-align: center;">Adicionar outro endereço</h1>-->
+
+     <mat-form-field class="example-full-width" appearance="outline" >
+      <mat-label>CEP</mat-label>
+      <input matInput #input maxlength="9" placeholder="Ex. 00000-000" [(ngModel)]="cep" required (blur)="consultaCep()">
+      <mat-hint align="end">{{input.value.length}}/9</mat-hint>
+     </mat-form-field>
+     
+     <mat-form-field class="example-full-width" appearance="outline" >
+        <mat-label>Rua</mat-label>
+        <input matInput placeholder="Ex. Irmão Leão Magno" [(ngModel)]="rua">
+       </mat-form-field>
+
+       <mat-form-field class="example-full-width" appearance="outline" >
+        <mat-label>Bairro</mat-label>
+        <input matInput placeholder="Ex. Amizade" [(ngModel)]="bairro">
+       </mat-form-field>
+
+       <mat-form-field class="example-full-width" appearance="outline" >
+        <mat-label>Cidade</mat-label>
+        <input matInput placeholder="Ex. Jaraguá do Sul" [(ngModel)]="cidade">
+       </mat-form-field>
+
+       <mat-form-field class="example-full-width" appearance="outline" >
+        <mat-label>Estado</mat-label>
+        <input matInput placeholder="Ex. SC" [(ngModel)]="estado">
+       </mat-form-field>
+
+       <mat-form-field class="example-full-width" appearance="outline" >
+       <mat-label>Número</mat-label>
+        <input matInput placeholder="Ex. 140" [(ngModel)]="num">
+       </mat-form-field>
+
+       <mat-form-field class="example-full-width" appearance="outline" >
+       <mat-label>Complemento</mat-label>
+        <input matInput placeholder="Ex. apt. 204" [(ngModel)]="complemento">
+       </mat-form-field>
+       
+       <mat-form-field class="example-full-width" appearance="outline" >
+       <mat-label>Ponto de referência</mat-label>
+        <input matInput placeholder="Ex. Bar do Arlindo" [(ngModel)]="pontoRef">
+       </mat-form-field><br>
+
+       <button mat-raised-button color="primary" (click)="addAddress()">Confirmar</button>
+</mat-tab>
+</mat-tab-group>
+<br>
+<button mat-raised-button id="botao" (click)="cancel()">Sair</button>

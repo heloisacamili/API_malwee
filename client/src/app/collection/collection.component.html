@@ -1,0 +1,18 @@
+<form class="example-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Buscar coleção</mat-label>
+        <input matInput placeholder="Digite aqui..." [(ngModel)]="pesquisar" name="pesquisar">
+        <button mat-icon-button matSuffix (click)="openDialog()"><mat-icon>add_circle_outline</mat-icon></button>
+    </mat-form-field>
+</form>
+<br>
+<table id="colecoes">
+    <tr>
+      <th id="id">ID</th>
+      <th id="colecao">Coleção</th>
+    </tr>
+    <tr *ngFor="let collection of collections | filter : pesquisar;">
+      <td (click)="openDialog2(collections, collection.id, collection.description)">{{collection.id}}</td>
+      <td (click)="openDialog2(collections, collection.id, collection.description)">{{collection.description}}</td>
+    </tr>
+</table>

@@ -1,0 +1,38 @@
+<form class="example-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Buscar grupo</mat-label>
+        <input matInput placeholder="Digite aqui..." [(ngModel)]="pesquisar" name="pesquisar">
+        <button mat-icon-button matSuffix (click)="openDialog()"><mat-icon>add_circle_outline</mat-icon></button>
+    </mat-form-field>
+</form>
+<br>
+
+<!--
+  <form class="example-form">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Number</mat-label>
+    <input type="text"
+           placeholder="Pick one"
+           aria-label="Number"
+           matInput
+           [formControl]="myControl"
+           [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+        {{option}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>
+-->
+
+<table id="grupos">
+    <tr>
+      <th id="id">ID</th>
+      <th id="grupo">Grupo</th>
+    </tr>
+    <tr *ngFor="let group of groups | filter : pesquisar;">
+      <td (click)="openDialog2(groups, group.id, group.description)">{{group.id}}</td>
+      <td (click)="openDialog2(groups, group.id, group.description)">{{group.description}}</td>
+    </tr>
+</table>

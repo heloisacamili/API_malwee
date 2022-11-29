@@ -1,0 +1,37 @@
+#dados tr:nth-child(even){
+    background-color: #d8d8d8;
+  
+}
+#dados tr:hover {
+    background-color: rgb(74, 112, 216);
+    color: white;
+    overflow: hidden;
+}
+#dados th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    color: white;
+    overflow: hidden;
+}
+#dados {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    margin-top: 30px;
+    width: 80%;
+    border-spacing: 0px;
+    margin: 30px auto;
+    border-radius: 15px;
+    overflow: hidden;
+}  
+#dados td, #dados th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+#id, #create {
+    background-color: #7246da;
+}
+#description, #update {
+    background-color: #3ba771;
+}

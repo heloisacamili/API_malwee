@@ -1,0 +1,78 @@
+<mat-tab-group>
+
+    <mat-tab label="Dados">
+       <mat-card-content>
+        <br>
+        <table id="dados">
+          <tr>
+            <th id="id">ID</th>
+            <th id="description">Descrição</th>
+            <th id="create">Criado em </th>
+            <th id="update">Atualizado em </th>
+          </tr>
+          <tr  *ngFor="let product of products">
+              <td>{{product.id}}</td>
+              <td>{{product.description}}</td>
+              <td>{{product.createdAt}}</td>
+              <td>{{product.updatedAt}}</td>
+          </tr>
+  
+         </table>
+         <br>
+         <br>
+         <h2>Grupo: </h2>
+         <table id="dados">
+           <tr>
+             <th id="id">ID</th>
+             <th id="description">Descrição</th>
+             <th id="create">Criado em </th>
+            <th id="update">Atualizado em </th>
+           </tr>
+           <tr  *ngFor="let group of group">
+               <td>{{group.id}}</td>
+               <td>{{group.description}}</td>
+               <td>{{group.createdAt}}</td>
+               <td>{{group.updatedAt}}</td>
+           </tr>
+  
+          </table>
+  
+         <br>
+         <h2>Sub-grupo:</h2>
+    <table id="dados">
+      <tr>
+        <th id="id">ID</th>
+        <th id="description">Descrição</th>
+        <th id="create">Criado em </th>
+        <th id="update">Atualizado em </th>
+      </tr>
+      <tr  *ngFor="let subgroup of subgroup">
+          <td>{{subgroup.id}}</td>
+          <td>{{subgroup.description}}</td>
+          <td>{{subgroup.createdAt}}</td>
+          <td>{{subgroup.updatedAt}}</td>
+      </tr>
+  
+     </table>
+     <br>
+         <h2>Coleção:</h2>
+    <table id="dados">
+      <tr>
+        <th id="id">ID</th>
+        <th id="description">Descrição</th>
+        <th id="create">Criado em </th>
+        <th id="update">Atualizado em </th>
+      </tr>
+      <tr  *ngFor="let collection of collection">
+          <td>{{collection.id}}</td>
+          <td>{{collection.description}}</td>
+          <td>{{collection.createdAt}}</td>
+          <td>{{collection.updatedAt}}</td>
+      </tr>
+  
+     </table>
+    </mat-card-content>
+    </mat-tab>
+</mat-tab-group>
+
+  

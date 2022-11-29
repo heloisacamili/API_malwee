@@ -1,0 +1,24 @@
+<mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Buscar cliente</mat-label>
+        <input matInput placeholder="Digite aqui..." [(ngModel)]="pesquisar" name="pesquisar">
+        <button mat-icon-button matSuffix (click)="openDialog()"> 
+            <mat-icon>add_circle_outline</mat-icon>
+        </button>
+</mat-form-field>
+
+<br>
+
+<table id="clientes">
+    <tr>
+        <th id="id"> ID </th>
+        <th id="name"> Nome </th>
+        <th id="cnpj"> CNPJ </th>
+        <th id="cd"> Cliente desde </th>
+    </tr>
+    <tr *ngFor="let client of clients | filter : pesquisar" >
+        <td> {{client.id}} </td>
+        <td> {{client.name}} </td>
+        <td> {{client.cnpj}} </td>
+        <td> {{client.createdAt | date : 'dd/MM/yyyy HH:mm'}}</td>
+    </tr>    
+</table>

@@ -1,0 +1,42 @@
+.example-full-width{
+    width: 100%;
+    font-size: medium;
+}
+#users{
+  margin-top: 30px;
+  border-collapse: collapse;
+  border-spacing: 0px;
+  width: 80%;
+  margin: 30px auto;
+  border-radius: 15px;
+  overflow: hidden;
+}
+#users td, #users th {
+  padding: 8px;
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.137);
+}
+#users tr:hover {
+  background-color: rgb(35, 119, 214);
+  color: white;
+}
+#users th {
+  border: 1px solid rgba(255, 255, 255, 0.411);
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  color: white;
+}
+#id, #user{
+  background-color: #7246da;
+  color: white;
+}
+#name {
+  background-color: #3ba771;
+  color: white;
+}
+
+h1{
+  text-align: center;
+  margin-top: 20px;
+}

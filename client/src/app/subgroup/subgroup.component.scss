@@ -1,0 +1,48 @@
+.example-form { 
+  width: 100%; 
+} 
+.example-full-width { 
+  width: 100%; 
+}
+#editar {
+  display: block;
+}
+#subgrupos tr:nth-child(even){
+  background-color: #e7e7e7;
+}
+#subgrupos tr:hover {
+  background-color: rgb(74, 112, 216);
+  color: white;
+}
+#subgrupos th {
+  border: 1px solid rgba(255, 255, 255, 0.411);
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  color: white;
+}
+#subgrupos {
+  margin-top: 30px;
+  border-collapse: collapse;
+  border-spacing: 0px;
+  width: 80%;
+  margin: 30px auto;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+#subgrupos td, #subgrupos th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+#id, #config, #grupo {
+  background-color: #7246da;
+}
+#subgrupo {
+  background-color: #3ba771;
+}
+#config {
+  width: 20%;
+  align-items: center;
+}

@@ -1,0 +1,104 @@
+<mat-tab-group>
+  <mat-tab label="Excluir">
+    <h1 mat-dialog-title>Deletar subgrupo</h1>
+  <div mat-dialog-content>
+    Você tem certeza que deseja deletar este item?
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button mat-dialog-close>Não</button>
+    <button mat-button mat-dialog-close cdkFocusInitial color="warn" (click)="delete()">Sim</button>
+  </div>   
+  </mat-tab>
+
+  <mat-tab label="Editar">
+
+       <mat-form-field class="example-full-width" appearance="fill" >
+           <mat-label>Insira o nome</mat-label>
+          <input matInput placeholder="Ex. André Ricardo Rocha" class="inputzin" [(ngModel)]="name">
+       </mat-form-field><br>
+       <mat-form-field class="example-full-width" appearance="fill" >
+          <mat-label>Insira o cnpj</mat-label>
+          <input matInput placeholder="Ex. XX. XXX. XXX/0001-XX" class="inputzin" [(ngModel)]="cnpj">
+       </mat-form-field><br>
+       <mat-form-field class="example-full-width" appearance="fill" >
+          <mat-label>Insira a Razão Social</mat-label>
+          <input matInput placeholder="Ex. Itaú Unibanco Banco Múltiplo S.A" class="inputzin" [(ngModel)]="socialReason">
+       </mat-form-field><br>
+       <mat-form-field class="example-full-width" appearance="fill" >
+          <mat-label>Cliente desde</mat-label>
+          <input matInput placeholder="Ex. 2015" class="inputzin" [(ngModel)]="clienteDesde">
+       </mat-form-field><br>
+          <button mat-raised-button (click)="edit()"><mat-icon>edit</mat-icon></button>
+  </mat-tab>
+
+  <mat-tab label="Tabela de endereços" id="te">
+    <mat-card-content>
+      <br>
+      <!--<table id="end">
+        <tr>
+          <th id="cep">CEP</th>
+          <th id="rua">Rua</th>
+          <th id="bairro">Bairro</th>
+          <th id="cidade">Cidade</th>
+          <th id="estado">Estado </th>
+          <th id="num">Número</th>
+        </tr>
+        <tr  *ngFor="let endereco of newAddress">
+          <td>{{endereco.cep}}</td>
+          <td>{{endereco.rua}}</td>
+          <td>{{endereco.bairro}}</td>
+          <td>{{endereco.cidade}}</td>
+          <td>{{endereco.estado}}</td>
+          <td>{{endereco.numero}}</td>
+        </tr>
+      </table>-->
+
+     <h1>Adicionar outro endereço</h1>
+     
+     <mat-form-field class="example-full-width" appearance="outline" >
+        <mat-label>Rua</mat-label>
+        <input matInput placeholder="Ex. João Maass" [(ngModel)]="rua">
+       </mat-form-field>
+
+       <mat-form-field class="example-full-width" appearance="outline" >
+        <mat-label>Bairro</mat-label>
+        <input matInput placeholder="Ex. Rio Molha" [(ngModel)]="bairro">
+       </mat-form-field>
+
+       <mat-form-field class="example-full-width" appearance="outline" >
+        <mat-label>Cidade</mat-label>
+        <input matInput placeholder="Ex. Jaraguá do Sul" [(ngModel)]="cidade">
+       </mat-form-field>
+
+       <mat-form-field class="example-full-width" appearance="outline" >
+        <mat-label>Estado</mat-label>
+        <input matInput placeholder="Ex. SC" [(ngModel)]="estado">
+       </mat-form-field>
+
+       <mat-form-field class="example-full-width" appearance="outline" >
+        <mat-label>CEP</mat-label>
+        <input matInput placeholder="Ex. 00000-000" [(ngModel)]="cep">
+       </mat-form-field>
+
+       <mat-form-field class="example-full-width" appearance="outline" >
+       <mat-label>Número</mat-label>
+        <input matInput placeholder="Ex. 22" [(ngModel)]="num">
+       </mat-form-field>
+
+       <mat-form-field class="example-full-width" appearance="outline" >
+       <mat-label>Complemento</mat-label>
+        <input matInput placeholder="Ex. apt. 22" [(ngModel)]="complemento">
+       </mat-form-field>
+       
+       <mat-form-field class="example-full-width" appearance="outline">
+       <mat-label>Ponto de referência</mat-label>
+        <input matInput placeholder="Ex. Mercado Santos" [(ngModel)]="pontoRef">
+       </mat-form-field>
+
+       <button mat-raised-button (click)="addAddress()">Confirmar</button>
+       </mat-card-content>
+       </mat-tab>
+</mat-tab-group>
+<br>
+
+<button mat-raised-button (click)="cancel()">Fechar</button>

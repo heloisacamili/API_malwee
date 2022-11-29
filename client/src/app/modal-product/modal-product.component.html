@@ -1,0 +1,30 @@
+  <mat-accordion>
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <h3><b>Cadastro de produto</b></h3>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <app-dropdown [array]="groups" [idField]="'id'" [textField]="'description'" [title]="'Grupo'" [(ngModel)]="group"></app-dropdown> 
+      <br>
+      <app-dropdown [array]="subgroups" [idField]="'id'" [textField]="'nameProduct'" [title]="'Subgrupo'" [(ngModel)]="subgroup"></app-dropdown> 
+      <br>
+      <app-dropdown [array]="collections" [idField]="'id'" [textField]="'description'" [title]="'Coleção'" [(ngModel)]="collection"></app-dropdown> 
+      <br>
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Descrição</mat-label>
+        <input matInput placeholder="Digite aqui..." [(ngModel)]="description" name="description" required>
+      </mat-form-field><br>
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Preço</mat-label>
+        <input matInput placeholder="R$" type="number" min="1" [(ngModel)]="price" name="price" required>
+      </mat-form-field><br>
+      <button mat-stroked-button matSuffix (click)="add()"><mat-icon>add</mat-icon></button>
+    </mat-expansion-panel>
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+    </mat-expansion-panel>
+</mat-accordion>
+<br><br>
+
+<button mat-raised-button id="botao" (click)="cancel()">Fechar</button>

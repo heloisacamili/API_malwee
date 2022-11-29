@@ -1,0 +1,50 @@
+<mat-accordion>
+        <mat-expansion-panel hideToggle>
+                <mat-expansion-panel-header>
+                        <mat-panel-title>
+                                Deletar
+                        </mat-panel-title>
+                </mat-expansion-panel-header>
+                <h1 mat-dialog-title>Deletar produto</h1>
+                <div mat-dialog-content>
+                        Você tem certeza que deseja deletar este item?
+                </div>
+                <div mat-dialog-actions>
+                        <button mat-button mat-dialog-close>Não</button>
+                        <button mat-button mat-dialog-close cdkFocusInitial color="warn" (click)="delete()">Sim</button>
+                </div>
+        </mat-expansion-panel>
+        <mat-expansion-panel (opened)="panelOpenState2 = true"
+                             (closed)="panelOpenState2 = false">
+        </mat-expansion-panel>
+</mat-accordion>
+    
+<mat-accordion>
+        <mat-expansion-panel hideToggle>
+                <mat-expansion-panel-header>
+                        <mat-panel-title>
+                                Editar produto
+                        </mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-form-field  class="example-full-width" appearance="outline">
+                        <mat-label>Descrição</mat-label>
+                        <input matInput placeholder="Nova descrição" [(ngModel)]="description" name="description" required>
+                </mat-form-field><br>
+                <mat-form-field  class="example-full-width" appearance="outline">
+                    <mat-label>Preço</mat-label>
+                    <input matInput placeholder="R$" [(ngModel)]="price" name="price" required>
+                </mat-form-field>
+                <br>
+                <button mat-raised-button matSuffix color="primary" (click)="edit(description, price)">Confirmar</button>
+        </mat-expansion-panel>
+        <mat-expansion-panel (opened)="panelOpenState2 = true"
+                             (closed)="panelOpenState2 = false">
+        </mat-expansion-panel>
+</mat-accordion><br>
+
+
+<button mat-raised-button id="botao" (click)="cancel()">Fechar</button>
+
+    
+    
+

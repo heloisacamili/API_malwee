@@ -1,0 +1,43 @@
+.example-form { 
+  width: 100%; 
+} 
+.example-full-width { 
+  width: 100%; 
+}
+#editar {
+  display: block;
+}
+#produtos tr:nth-child(even){
+  background-color: #f2f2f2;
+}
+#produtos tr:hover {
+  background-color: rgb(74, 112, 216);
+  color: white;
+}
+#produtos th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  color: white;
+}
+#produtos {
+  margin-top: 30px;
+  border-collapse: collapse;
+  border-spacing: 0px;
+  width: 80%;
+  margin: 30px auto;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+#produtos td, #produtos th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+#id, #preco, #grupo, #config {
+  background-color: #7246da;
+}
+#produto, #colecao, #subgrupo {
+  background-color: #3ba771;
+}

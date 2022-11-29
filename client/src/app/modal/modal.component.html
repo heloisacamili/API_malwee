@@ -1,0 +1,21 @@
+<mat-accordion>
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Adicionar novo grupo
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-form-field class="example-full-width" appearance="outline" style="width: 100%;">
+        <mat-label>Inserir novo grupo</mat-label>
+        <input matInput placeholder="Descrição.." [(ngModel)]="description" name="description" required>
+        <mat-error *ngIf="insert.invalid">{{getErrorMessage()}}</mat-error>
+        <button mat-stroked-button matSuffix (click)="add()"><mat-icon>add</mat-icon></button>
+    </mat-form-field>
+    </mat-expansion-panel>
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+    </mat-expansion-panel>
+</mat-accordion>
+<br><br>
+
+<button mat-raised-button id="botao" (click)="cancel()">Fechar</button>

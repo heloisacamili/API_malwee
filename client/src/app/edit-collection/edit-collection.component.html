@@ -1,0 +1,41 @@
+<mat-accordion>
+        <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Deletar coleção
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <h1 mat-dialog-title>Deletar coleção</h1>
+        <div mat-dialog-content>
+                Você tem certeza que deseja deletar este item?
+        </div>
+        <div mat-dialog-actions>
+                <button mat-button mat-dialog-close>Não</button>
+                <button mat-button mat-dialog-close color="warn" cdkFocusInitial (click)="delete()">Sim</button>
+        </div>
+        </mat-expansion-panel>
+        <mat-expansion-panel (opened)="panelOpenState2 = true"
+                             (closed)="panelOpenState2 = false">
+        </mat-expansion-panel>
+</mat-accordion>
+    
+<mat-accordion>
+        <mat-expansion-panel hideToggle>
+                <mat-expansion-panel-header>
+                        <mat-panel-title>
+                                Editar coleção
+                        </mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-form-field  class="example-full-width" appearance="outline">
+                        <mat-label>Descrição</mat-label>
+                        <input matInput placeholder="Nova descrição" [(ngModel)]="description" name="description" required>
+                        <mat-error *ngIf="insert.invalid">{{getErrorMessage()}}</mat-error>
+                </mat-form-field><br>
+                <button mat-raised-button matSuffix color="primary" (click)="edit(description)">Confirmar</button>
+        </mat-expansion-panel>
+        <mat-expansion-panel (opened)="panelOpenState2 = true"
+                             (closed)="panelOpenState2 = false">
+        </mat-expansion-panel>
+</mat-accordion><br>
+
+<button mat-raised-button id="botao" (click)="cancel()">Fechar</button> 

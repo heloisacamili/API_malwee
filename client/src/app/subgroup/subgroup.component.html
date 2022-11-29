@@ -1,0 +1,20 @@
+<mat-form-field class="example-full-width" appearance="fill" >
+    <mat-label>Buscar subgrupo</mat-label>
+        <input matInput id="input1" placeholder="Ex. Camiseta" [(ngModel)]="pesquisar">
+        <button mat-icon-button matSuffix (click)="openDialog()"><mat-icon>add_circle_outline</mat-icon></button>
+</mat-form-field>     
+<br>
+
+ <table id="subgrupos">
+    <tr>
+        <th id="id">ID</th>
+        <th id="subgrupo">Subgrupo</th>
+        <th id="grupo">Grupo</th>
+    </tr>
+    <tr *ngFor="let subgroup of subgroups | filter : pesquisar" >
+        <td (click)="openDialog2(subgroups, subgroup.id, subgroup.description)">{{subgroup.id}}</td>
+        <td (click)="openDialog2(subgroups, subgroup.id, subgroup.description)">{{subgroup.nameProduct}}</td>
+        <td (click)="openDialog2(subgroups, subgroup.id, subgroup.description)">{{subgroup.group_description}}</td>
+    </tr> 
+</table>
+
