@@ -1,6 +1,4 @@
 const Joi = require('joi');
-const md5 = require('../utils/md5-pass');
-const securityConsts = require('../consts/security-consts');
 const knl = require('../knl');
 
 knl.post('user', async(req, resp) => {
@@ -32,3 +30,47 @@ knl.post('user', async(req, resp) => {
     await user.save();
     resp.end();
 })
+
+knl.get('user', async(req, resp) => {
+    const result = await knl.sequelize().models.Usuario.findAll({
+        where : {
+            status: 1
+        }
+    });
+    resp.json(result);
+    resp.end();
+});
+
+knl.get('user/:id', async(req, resp) => {
+    const result = await knl.sequelize().models.Usuario.findAll({
+        where : {
+            id : req.params.id
+        }
+    });
+    resp.json(result);
+    resp.end();
+});
+
+knl.put('user', async(req,resp)=>{
+    const result = await knl.sequelize().models.Usuario.update({
+        password  : md5(req.body.password)
+    },{
+        where : {
+            id : req.body.id,
+        }
+    })
+    resp.send(result);
+    resp.end();
+});
+
+knl.patch('user/:id', async(req, resp) => {
+    const result = await knl.sequelize().models.Usuario.update({
+        status : 0
+    },{
+        where : {
+            id: req.params.id,
+        },
+    });
+    resp.json(result)
+    resp.end();
+});
