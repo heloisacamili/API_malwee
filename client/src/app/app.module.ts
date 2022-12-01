@@ -35,6 +35,7 @@ import { EditClientComponent } from './edit-client/edit-client.component';
 import { DropdownComponent } from './dropdown/dropdown.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { DadosComponent } from './dados/dados.component';
+import { RequestComponent } from './request/request.component';
 
 
 @NgModule({
@@ -65,6 +66,7 @@ import { DadosComponent } from './dados/dados.component';
     DropdownComponent,
     EditUserComponent,
     DadosComponent,
+    RequestComponent,
   ],
   imports: [
     RoutesModule,
